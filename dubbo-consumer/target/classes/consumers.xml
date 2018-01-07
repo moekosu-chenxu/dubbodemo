@@ -14,6 +14,6 @@
 	<dubbo:registry protocol="zookeeper" address="120.79.69.50:2181" client="zkclient" />
 	
 	<!-- 生成远程服务代理，可以和本地 bean 一样使用 testService -->
-	<dubbo:reference id="demoService" interface="com.minbo.dubbo.provider.DemoService" />
+	<dubbo:reference id="demoService" interface="com.moekosu.dubbo.provider.service.DemoService" />
 	
 </beans>
