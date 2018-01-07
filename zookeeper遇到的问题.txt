@@ -1,0 +1,9 @@
+1.myid file is missing
+/zookeeper/conf/zoo.cfg配置文件中dataDir地址要写对，确保有文件夹且里面有myid文件
+server.1.2.3要配置 myid文件中对应的是123
+
+2.QuorumCnxManager$Listener@763  QuorumCnxManager$Listener.run(QuorumCnxManager.java:742)
+监听端口发生错误 因为是云服务器 没有物理网卡 所以只能在zoo.cfg配置中添加quorumListenOnAllIPs=true监听所有端口
+
+3.Cannot open channel to 2 at election address /120.79.69.50:3888
+配置了3个/多个server.1.2.3 但是都是一样的本机地址，导致中间无法通信报错（选举机制）
