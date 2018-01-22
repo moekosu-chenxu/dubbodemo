@@ -15,6 +15,7 @@
 	
 	<!-- 生成远程服务代理，可以和本地 bean 一样使用 testService -->
 	<dubbo:reference id="demoService" interface="com.moekosu.dubbo.provider.service.DemoService" />
-	<dubbo:reference id="lotteryService" interface="com.moekosu.dubbo.provider.service.LotteryService" />
-	
+	<dubbo:reference id="prizeLotteryService" interface="com.moekosu.dubbo.provider.service.LotteryService" />
+	<dubbo:reference id="personLotteryService" interface="com.moekosu.dubbo.provider.service.LotteryService" />
+
 </beans>

@@ -1,5 +1,6 @@
 package com.moekosu.dubbo.api.bean;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 
 /**
@@ -7,7 +8,9 @@ import java.math.BigDecimal;
  * @author chenxu
  * @date 2017-12-26
  */
-public class LotteryPrize {
+public class LotteryPrize implements Serializable {
+
+    private static final long serialVersionUID = -4239040369883369888L;
 
     // 奖品id
     private String prizeId;

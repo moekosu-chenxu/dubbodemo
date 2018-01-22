@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.moekosu.dubbo.provider.dao.ModulesMapper" >
+
+    <resultMap id="Modules" type="com.moekosu.dubbo.api.bean.Modules">
+
+    </resultMap>
+
+    <select id="getAllModulesList" resultMap="Modules">
+        SELECT
+          m.id as mid,
+          m.name as name,
+          m.url as url,
+          m.create_date as createDate,
+          m.status as status
+        FROM
+          MODULES m
+    </select>
+
+</mapper>

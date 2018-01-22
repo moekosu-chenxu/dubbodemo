@@ -1,9 +1,13 @@
 package com.moekosu.dubbo.api.bean;
 
+import java.io.Serializable;
+
 /**
  * 抽奖用户
  */
-public class LotteryUser {
+public class LotteryUser implements Serializable{
+
+    private static final long serialVersionUID = 1681437369581958641L;
 
     // 抽奖id 用于抽奖
     private int id;
