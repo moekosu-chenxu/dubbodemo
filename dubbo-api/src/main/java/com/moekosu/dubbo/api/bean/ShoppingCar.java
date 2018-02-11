@@ -6,6 +6,7 @@ import java.util.List;
 
 public class ShoppingCar implements Serializable{
 
+    private static final long serialVersionUID = -6797353054794750373L;
     // id
     private Integer sId;
 

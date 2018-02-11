@@ -1,12 +1,15 @@
 package com.moekosu.dubbo.api.bean;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  * 模块
  * Created by Administrator on 2018/1/21.
  */
-public class Modules {
+public class Modules implements Serializable{
+
+	private static final long serialVersionUID = 5316814464434198378L;
 
 	private Integer mid;
 	private String name;

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.moekosu.dubbo.provider.dao.UserMapper" >
+
+    <resultMap id="User" type="com.moekosu.dubbo.api.bean.User">
+
+    </resultMap>
+
+    <select id="getUserList" resultMap="User">
+        SELECT
+            u.id as id,
+            u.name as name,
+            u.password as password,
+            u.age as age,
+            u.description as description
+        FROM
+            USER u
+    </select>
+
+</mapper>

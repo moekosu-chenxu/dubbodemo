@@ -23,10 +23,13 @@
 		ref="prizeLotteryService" timeout="10000" />
 	<dubbo:service interface="com.moekosu.dubbo.provider.service.LotteryService"
 		ref="personLotteryService" timeout="10000" />
+	<dubbo:service interface="com.moekosu.dubbo.provider.service.ModulesService"
+		ref="modulesService" timeout="10000" />
 
 	<!-- 和本地 bean 一样实现服务 -->
 	<bean id="demoService" class="com.moekosu.dubbo.provider.service.impl.DemoServiceImpl" />
 	<bean id="prizeLotteryService" class="com.moekosu.dubbo.provider.service.impl.PrizeLotteryServiceImpl" />
 	<bean id="personLotteryService" class="com.moekosu.dubbo.provider.service.impl.PersonLotteryServiceImpl" />
-	
+	<bean id="modulesService" class="com.moekosu.dubbo.provider.service.impl.ModulesServiceImpl" />
+
 </beans>

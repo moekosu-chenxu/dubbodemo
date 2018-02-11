@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 public class GoodsSpec implements Serializable {
 
+    private static final long serialVersionUID = 3074346789094929424L;
     // 商品id
     private Integer gId;
 

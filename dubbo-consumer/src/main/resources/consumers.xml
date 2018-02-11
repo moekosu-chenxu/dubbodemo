@@ -17,5 +17,6 @@
 	<dubbo:reference id="demoService" interface="com.moekosu.dubbo.provider.service.DemoService" />
 	<dubbo:reference id="prizeLotteryService" interface="com.moekosu.dubbo.provider.service.LotteryService" />
 	<dubbo:reference id="personLotteryService" interface="com.moekosu.dubbo.provider.service.LotteryService" />
+	<dubbo:reference id="modulesService" interface="com.moekosu.dubbo.provider.service.ModulesService" />
 
 </beans>
