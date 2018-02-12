@@ -1,0 +1,9 @@
+com\moekosu\dubbo\api\bean\User.class
+com\moekosu\dubbo\api\bean\Goods.class
+com\moekosu\dubbo\api\bean\Activity.class
+com\moekosu\dubbo\api\bean\Modules.class
+com\moekosu\dubbo\api\bean\GoodsSpec.class
+com\moekosu\dubbo\api\bean\LotteryPrize.class
+com\moekosu\dubbo\api\bean\UserLogin.class
+com\moekosu\dubbo\api\bean\ShoppingCar.class
+com\moekosu\dubbo\api\bean\LotteryUser.class

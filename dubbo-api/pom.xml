@@ -8,6 +8,7 @@
     <artifactId>dubbo-api</artifactId>
     <packaging>jar</packaging>
     <name>dubbo-api</name>
+    <version>1.0</version>
     <description>Demo project for Spring Boot</description>
 
     <parent>

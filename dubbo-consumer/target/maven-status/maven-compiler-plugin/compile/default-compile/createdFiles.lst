@@ -1,0 +1,4 @@
+com\moekosu\dubbo\consumer\controller\LotteryController.class
+com\moekosu\dubbo\consumer\controller\TestController.class
+com\moekosu\dubbo\consumer\controller\ModulesController.class
+com\moekosu\dubbo\consumer\DubboConsumerApplication.class

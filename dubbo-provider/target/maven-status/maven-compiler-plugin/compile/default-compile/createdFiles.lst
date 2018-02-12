@@ -1,0 +1,12 @@
+com\moekosu\dubbo\provider\service\impl\PersonLotteryServiceImpl.class
+com\moekosu\dubbo\provider\service\abstractImpl\LotteryAbstractService.class
+com\moekosu\dubbo\provider\dao\ModulesMapper.class
+com\moekosu\dubbo\provider\service\DemoService.class
+com\moekosu\dubbo\provider\service\LotteryService.class
+com\moekosu\dubbo\provider\dao\ShoppingCarMapper.class
+com\moekosu\dubbo\provider\service\impl\DemoServiceImpl.class
+com\moekosu\dubbo\provider\service\impl\PrizeLotteryServiceImpl.class
+com\moekosu\dubbo\provider\dao\UserMapper.class
+com\moekosu\dubbo\provider\service\impl\ModulesServiceImpl.class
+com\moekosu\dubbo\provider\service\ModulesService.class
+com\moekosu\dubbo\provider\DubboProviderApplication.class

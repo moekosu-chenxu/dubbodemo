@@ -7,6 +7,7 @@
 	<artifactId>dubbo-consumer</artifactId>
 	<packaging>jar</packaging>
 	<name>dubbo-consumer</name>
+	<version>1.0</version>
 	<description>Demo project for Spring Boot</description>
 
 	<parent>  
@@ -46,7 +47,7 @@
 		<dependency>
 			<groupId>com.moekosu.dubbo</groupId>
 			<artifactId>dubbo-api</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<version>1.0</version>
 		</dependency>
 
 		<!-- 格式化对象，方便输出日志 -->
@@ -85,7 +86,7 @@
 		<dependency>
 			<groupId>com.moekosu.dubbo</groupId>
 			<artifactId>dubbo-provider</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<version>1.0</version>
 		</dependency>
 	</dependencies>
 

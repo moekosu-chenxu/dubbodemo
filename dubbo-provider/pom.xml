@@ -7,6 +7,7 @@
 	<artifactId>dubbo-provider</artifactId>
 	<packaging>jar</packaging>
 	<name>dubbo-provider</name>
+	<version>1.0</version>
 	<description>Demo project for Spring Boot</description>
 
 	<parent>  
@@ -39,7 +40,7 @@
 		<dependency>
 			<groupId>com.moekosu.dubbo</groupId>
 			<artifactId>dubbo-api</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<version>1.0</version>
 		</dependency>
 		
 		<dependency>
