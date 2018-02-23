@@ -15,6 +15,10 @@
           m.status as status
         FROM
           MODULES m
+        WHERE
+          m.status = 1
+        ORDER BY
+          m.priority ASC
     </select>
 
 </mapper>
