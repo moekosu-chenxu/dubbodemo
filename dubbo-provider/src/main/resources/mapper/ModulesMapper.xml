@@ -17,6 +17,9 @@
           MODULES m
         WHERE
           m.status = 1
+          and m.id not in(
+            SELECT b.mid FROM BLACK_MODULES b
+          )
         ORDER BY
           m.priority ASC
     </select>
