@@ -1,11 +1,15 @@
 package com.moekosu.dubbo.api.bean;
 
+import java.io.Serializable;
+
 /**
  * 工具下载实体类
  * @author chenxu
  * @date 2018/02
  */
-public class Tools implements Serializable{
+public class Tools implements Serializable {
+
+    private static final long serialVersionUID = -2315960556456575683L;
 
     private Integer id;
 

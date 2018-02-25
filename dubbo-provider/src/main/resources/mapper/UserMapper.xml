@@ -14,7 +14,7 @@
             u.age as age,
             u.description as description
         FROM
-            USER u
+            user u
     </select>
 
 </mapper>

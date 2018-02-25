@@ -3,20 +3,17 @@
 <mapper namespace="com.moekosu.dubbo.provider.dao.ToolsMapper" >
 
     <resultMap id="Tools" type="com.moekosu.dubbo.api.bean.Tools">
-        <id column="id" property="id" jdbcType="INTEGER" />
-        <result column="software_name" property="name" jdbcType="VARCHAR" />
-        <result column="software_url" property="url" jdbcType="VARCHAR" />
-        <result column="status" property="status" jdbcType="VARCHAR" />
+
     </resultMap>
 
     <select id="getToolsList" resultMap="Tools" parameterType="com.moekosu.dubbo.api.bean.Tools">
         SELECT
             t.id,
-            t.software_name,
-            t.software_url,
+            t.name,
+            t.url,
             t.status
         FROM
-          TOOLS t
+          tools t
         WHERE
           t.status = 1
           <if test="id != null and id != ''">

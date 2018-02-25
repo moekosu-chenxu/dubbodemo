@@ -14,11 +14,11 @@
           m.create_date as createDate,
           m.status as status
         FROM
-          MODULES m
+          modules m
         WHERE
           m.status = 1
           and m.id not in(
-            SELECT b.mid FROM BLACK_MODULES b
+            SELECT b.module_id FROM black_modules b WHERE b.status=1
           )
         ORDER BY
           m.priority ASC

@@ -20,8 +20,8 @@ spring:
   datasource:
     name: mydb
     type: com.alibaba.druid.pool.DruidDataSource #alibaba.druid���ӳ�
-    #url: jdbc:mysql://10.12.9.161:3306/dccp_dev #mysql��ַ dccp dccp321
-    url: jdbc:mysql://moekosu-1.mysql.rds.aliyuncs.com:3306/test #mysql��ַ
+    url: jdbc:mysql://120.79.69.50:3306/test #mysql
+    #url: jdbc:mysql://moekosu-1.mysql.rds.aliyuncs.com:3306/test #ali mysql
     username: root
     password: -
     driver-class-name: com.mysql.jdbc.Driver

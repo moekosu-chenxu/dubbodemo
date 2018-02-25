@@ -3,6 +3,9 @@ package com.moekosu.dubbo.provider.service.impl;
 import com.moekosu.dubbo.api.bean.Tools;
 import com.moekosu.dubbo.provider.dao.ToolsMapper;
 import com.moekosu.dubbo.provider.service.ToolsService;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import java.util.List;
 
 /**
  * @author chenxu
@@ -10,7 +13,7 @@ import com.moekosu.dubbo.provider.service.ToolsService;
  */
 public class ToolsServiceImpl implements ToolsService {
 
-    @Autowire
+    @Autowired
     private ToolsMapper toolsMapper;
 
     @Override

@@ -3,9 +3,12 @@ package com.moekosu.dubbo.consumer.controller;
 import com.alibaba.fastjson.JSON;
 import com.moekosu.dubbo.api.bean.Tools;
 import com.moekosu.dubbo.provider.service.ToolsService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 /**
  * 工具下载Controller
@@ -15,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ToolsController {
 
-    @Autowire
+    @Autowired
     private ToolsService toolsService;
 
     @RequestMapping("/tools/list")
