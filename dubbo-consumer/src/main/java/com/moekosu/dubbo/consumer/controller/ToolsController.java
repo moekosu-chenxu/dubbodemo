@@ -38,13 +38,14 @@ public class ToolsController {
 
     @RequestMapping("/tools/download")
     @ResponseBody
-    public String downloadTools(String downloadUrl, HttpServletResponse response)
+    public String downloadTools(String pass, String fileName, String downloadUrl, HttpServletResponse response)
     {
         //
         final String msgSuccess = "成功";
         final String msgNoExist = "失败，文件不存在";
         final String msgNoAuth = "失败，您无权限下载";
         final String msgError = "失败，系统错误";
+        final String CORRECT_PASS = "218";
 
         // 处理
         File f = new File(downloadUrl);
@@ -52,8 +53,15 @@ public class ToolsController {
             return msgNoExist;
         }
         // TODO 鉴权(提取密码)
+        if(!CORRECT_PASS.equals(pass)){
+            return msgNoAuth;
+        }
 
-        //
+        // 设置编码与文件名
+        response.setCharacterEncoding("UTF-8");
+        response.addHeader("Content-Disposition", "attachment; filename=" + fileName);
+
+        // 输入输出流
         FileInputStream in = null;
         ServletOutputStream out = null;
         try {
