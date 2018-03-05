@@ -5,8 +5,10 @@ import java.util.List;
 
 public class Goods implements Serializable {
 
+    private static final long serialVersionUID = 4437309283256131482L;
+
     // 商品id
-    private Integer gId;
+    private String gId;
 
     // 商品名称
     private String goodsName;
@@ -23,11 +25,11 @@ public class Goods implements Serializable {
     // 购买数量(给购物车用，这里懒得用继承解耦)
     private String goodsNum;
 
-    public Integer getgId() {
+    public String getgId() {
         return gId;
     }
 
-    public void setgId(Integer gId) {
+    public void setgId(String gId) {
         this.gId = gId;
     }
 

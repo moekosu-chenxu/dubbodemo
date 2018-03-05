@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.moekosu.dubbo.provider.dao.MsgBoardMapper" >
+
+    <resultMap id="MsgBoard" type="com.moekosu.dubbo.api.bean.MessageBoard">
+
+    </resultMap>
+
+    <select id="getBoardList" resultMap="MsgBoard">
+        SELECT
+          m.id as id,
+          m.author as author,
+          m.content as content,
+          m.create_date as createDate
+        FROM
+          board b
+        ORDER BY
+          b.create_date DESC
+    </select>
+
+    <insert id="addMessage" parameterType="com.moekosu.dubbo.api.bean.MessageBoard">
+        INSERT INTO
+          board(author, content, create_date)
+        VALUES (
+          #{author}, #{content}, NOW()
+        )
+    </insert>
+
+</mapper>

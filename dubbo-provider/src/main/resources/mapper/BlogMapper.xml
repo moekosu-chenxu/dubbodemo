@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.moekosu.dubbo.provider.dao.BlogMapper" >
+
+    <resultMap id="Essay" type="com.moekosu.dubbo.api.bean.Essay">
+
+    </resultMap>
+    <resultMap id="EssayGroup" type="com.moekosu.dubbo.api.bean.EssayGroup">
+
+    </resultMap>
+
+    <!-- 获取文章列表，@param groupId -->
+    <select id="getEssayList" resultMap="Essay" parameterType="java.lang.String">
+        SELECT
+          b.id as id,
+          b.title as title,
+          b.content as content,
+          b.create_date as createDate,
+          b.status as status,
+          gp.id as groupId,
+          gp.name as groupName,
+          gp.status as groupStatus
+        FROM
+          blog b
+        LEFT JOIN
+          blog_group gp
+        ON
+          b.group_id = gp.id
+        WHERE
+          b.status=1
+          <if test="groupId != null and groupId != ''">
+              and b.group_id = #{groupId}
+          </if>
+        ORDER BY
+          b.create_date DESC
+    </select>
+
+    <!-- 获取所有群组 -->
+    <select id="getEssayGroupList" resultMap="EssayGroup">
+        SELECT
+          gp.id as id,
+          gp.name as name,
+          gp.status as status
+        FROM
+          blogGroup gp
+        WHERE
+          gp.status=1
+    </select>
+
+    <!-- 获取单个文章详情信息 -->
+    <select id="getEssayDetailById" parameterType="java.lang.String" resultMap="Essay">
+        SELECT
+          b.id as id,
+          b.title as title,
+          b.content as content,
+          b.create_date as createDate,
+          b.status as status
+        FROM
+          blog b
+        WHERE
+          b.id= #{essayId}
+    </select>
+
+    <!-- 新增文章 -->
+    <insert id="addEssay" parameterType="com.moekosu.dubbo.api.bean.Essay">
+        INSERT INTO
+          blog(title, content, create_date, status, group_id)
+        VALUES (
+          #{title}, #{content}, NOW(), 1, #{groupId}
+        )
+    </insert>
+
+    <!-- 删除文章 -->
+    <update id="removeEssay" parameterType="java.lang.String">
+        UPDATE
+          blog b
+        SET
+          b.status = 0
+        WHERE
+          b.id = #{essayId}
+    </update>
+
+    <!-- 编辑文章 -->
+    <update id="updateEssay" parameterType="com.moekosu.dubbo.api.bean.Essay">
+        UPDATE
+          blog b
+        SET
+          b.status = 1
+          <if test="title != null and title != ''">
+              ,b.title = #{title}
+          </if>
+          <if test="content != null and content != ''">
+              ,b.content = #{content}
+          </if>
+          <if test="groupId != null and groupId != ''">
+              ,b.group_id = #{groupId}
+          </if>
+        WHERE
+          b.id = #{id}
+    </update>
+
+</mapper>

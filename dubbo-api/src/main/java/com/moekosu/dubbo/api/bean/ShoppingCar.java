@@ -8,7 +8,7 @@ public class ShoppingCar implements Serializable{
 
     private static final long serialVersionUID = -6797353054794750373L;
     // id
-    private Integer sId;
+    private String sId;
 
     // 商品列表
     private List<Goods> goodsList;
@@ -19,11 +19,11 @@ public class ShoppingCar implements Serializable{
     // 总价
     private BigDecimal priceSum;
 
-    public Integer getsId() {
+    public String getsId() {
         return sId;
     }
 
-    public void setsId(Integer sId) {
+    public void setsId(String sId) {
         this.sId = sId;
     }
 

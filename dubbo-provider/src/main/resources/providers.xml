@@ -27,6 +27,10 @@
 		ref="modulesService" timeout="10000" />
 	<dubbo:service interface="com.moekosu.dubbo.provider.service.ToolsService"
 		ref="toolsService" timeout="10000" />
+	<dubbo:service interface="com.moekosu.dubbo.provider.service.BlogService"
+		ref="blogService" timeout="10000" />
+	<dubbo:service interface="com.moekosu.dubbo.provider.service.MsgBoardService"
+		ref="msgBoardService" timeout="10000" />
 
 	<!-- 和本地 bean 一样实现服务 -->
 	<bean id="demoService" class="com.moekosu.dubbo.provider.service.impl.DemoServiceImpl" />
@@ -34,5 +38,7 @@
 	<bean id="personLotteryService" class="com.moekosu.dubbo.provider.service.impl.PersonLotteryServiceImpl" />
 	<bean id="modulesService" class="com.moekosu.dubbo.provider.service.impl.ModulesServiceImpl" />
 	<bean id="toolsService" class="com.moekosu.dubbo.provider.service.impl.ToolsServiceImpl" />
+	<bean id="blogService" class="com.moekosu.dubbo.provider.service.impl.BlogServiceImpl" />
+	<bean id="msgBoardService" class="com.moekosu.dubbo.provider.service.impl.MsgBoardServiceImpl" />
 
 </beans>

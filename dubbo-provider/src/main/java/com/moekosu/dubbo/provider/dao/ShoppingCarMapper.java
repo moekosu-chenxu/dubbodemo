@@ -7,17 +7,21 @@ import org.apache.ibatis.annotations.Param;
 @Mapper
 public interface ShoppingCarMapper {
 
-    // TODO 表1 User (id name...
-    // TODO 表2 ShoppingCar (包含userId外键) (id user_id priceSum
-    // TODO 表3 Goods 商品表 (id name...
-    // TODO 表4 Car_Goods 多对多中间表 (car_id goods_id buyCount(数量)
+    // TODO 表1 user (id name password authority)
+    // TODO 表2 shoppingCar (id user_id priceSum)
+    // TODO 表3 goods 商品表 (id name price)
+    // TODO 表4 car_goods 多对多中间表 (car_id goods_id buyCount)
 
-    void addCar(@Param("carId") int carId, @Param("goodsId") int goodsId) throws Exception;
+    // 创建购物车 操作ShoppingCar表
+    void createCar(String userId) throws Exception;
 
-    ShoppingCar getCarDetails(ShoppingCar car);
+    // 操作Car_Goods表
+    void add2Car(@Param("carId") String carId, @Param("goodsId") String goodsId, @Param("buyCount") String buyCount) throws Exception;
 
-    int createCar(int userId) throws Exception;
+    // 获取购物车列表
+    ShoppingCar getCarDetails(String userId);
 
-    void removeGoods(@Param("carId") int carId, @Param("goodsId") int goodsId) throws Exception;
+    // 删除购物车内的商品(不传商品id则删除全部购物车)
+    void remove4Car(@Param("carId") String carId, @Param("goodsId") String goodsId) throws Exception;
 
 }

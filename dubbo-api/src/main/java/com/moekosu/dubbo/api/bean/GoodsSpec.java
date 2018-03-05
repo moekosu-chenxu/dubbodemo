@@ -6,7 +6,7 @@ public class GoodsSpec implements Serializable {
 
     private static final long serialVersionUID = 3074346789094929424L;
     // 商品id
-    private Integer gId;
+    private String gId;
 
     // 商品颜色(红 蓝 黑)
     private String color;
@@ -14,11 +14,11 @@ public class GoodsSpec implements Serializable {
     // 商品尺寸(L XL XXL)
     private String size;
 
-    public Integer getgId() {
+    public String getgId() {
         return gId;
     }
 
-    public void setgId(Integer gId) {
+    public void setgId(String gId) {
         this.gId = gId;
     }
 
