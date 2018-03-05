@@ -29,7 +29,7 @@
         WHERE
           b.status=1
           <if test="groupId != null and groupId != ''">
-              and b.group_id = #{groupId}
+              and b.group_id = #{groupId, jdbcType=VARCHAR}
           </if>
         ORDER BY
           b.create_date DESC
@@ -42,7 +42,7 @@
           gp.name as name,
           gp.status as status
         FROM
-          blogGroup gp
+          blog_group gp
         WHERE
           gp.status=1
     </select>

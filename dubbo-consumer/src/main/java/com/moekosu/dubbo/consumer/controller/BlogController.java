@@ -49,10 +49,13 @@ public class BlogController extends PageController {
 
     @RequestMapping("/blog/add")
     @ResponseBody
-    public String addEssay()
+    public String addEssay(String title, String content, String groupId)
     {
+        Essay essay = new Essay();
+        essay.setTitle(title);
+        essay.setContent(content);
+        essay.setGroupId(groupId == null? "0": groupId);
         try {
-            Essay essay = new Essay();
             blogService.addEssay(essay);
             return returnSuccessMap(null);
         }

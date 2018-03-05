@@ -3,6 +3,7 @@ package com.moekosu.dubbo.provider.dao;
 import com.moekosu.dubbo.api.bean.Essay;
 import com.moekosu.dubbo.api.bean.EssayGroup;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -13,15 +14,15 @@ import java.util.List;
 @Mapper
 public interface BlogMapper {
 
-    List<Essay> getEssayList(String groupId);
+    List<Essay> getEssayList(@Param("groupId") String groupId);
 
     List<EssayGroup> getEssayGroupList();
 
-    Essay getEssayDetailById(String essayId);
+    Essay getEssayDetailById(@Param("essayId") String essayId);
 
     void addEssay(Essay essay);
 
-    void removeEssay(String essayId);
+    void removeEssay(@Param("essayId") String essayId);
 
     void updateEssay(Essay essay);
 
