@@ -15,7 +15,7 @@
           b.id as id,
           b.title as title,
           b.content as content,
-          b.create_date as createDate,
+          DATE_FORMAT(b.create_date,'%Y/%d/%m %H:%i:%s') as createDate,
           b.status as status,
           gp.id as groupId,
           gp.name as groupName,
