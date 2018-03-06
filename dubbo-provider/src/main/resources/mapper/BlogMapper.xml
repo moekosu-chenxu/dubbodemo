@@ -38,9 +38,9 @@
     <!-- 获取所有群组 -->
     <select id="getEssayGroupList" resultMap="EssayGroup">
         SELECT
-          gp.id as id,
-          gp.name as name,
-          gp.status as status
+          gp.id as groupId,
+          gp.name as groupName,
+          gp.status as groupStatus
         FROM
           blog_group gp
         WHERE
