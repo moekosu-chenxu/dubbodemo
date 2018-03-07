@@ -5,6 +5,7 @@ import com.moekosu.dubbo.api.bean.Essay;
 import com.moekosu.dubbo.api.bean.EssayGroup;
 import com.moekosu.dubbo.provider.service.BlogService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,6 +18,7 @@ import java.util.Map;
  * @author chenxu
  * @date 2018/03
  */
+@CrossOrigin(origins = "localhost", maxAge = 3600)
 @RestController
 public class BlogController extends PageController {
 
