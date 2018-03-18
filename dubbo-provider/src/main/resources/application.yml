@@ -20,10 +20,10 @@ spring:
   datasource:
     name: mydb
     type: com.alibaba.druid.pool.DruidDataSource #alibaba.druid���ӳ�
-    url: jdbc:mysql://120.79.69.50:3306/test #mysql
+    url: jdbc:mysql://120.79.69.50:3306/test?useUnicode=true&characterEncoding=utf8 #mysql
     #url: jdbc:mysql://moekosu-1.mysql.rds.aliyuncs.com:3306/test #ali mysql
     username: root
-    password: -
+    password: 123456
     driver-class-name: com.mysql.jdbc.Driver
     tomcat:
       min-idle: 1

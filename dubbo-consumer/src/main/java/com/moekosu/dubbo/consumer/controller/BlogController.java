@@ -1,15 +1,16 @@
 package com.moekosu.dubbo.consumer.controller;
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
 import com.moekosu.dubbo.api.bean.Essay;
 import com.moekosu.dubbo.api.bean.EssayGroup;
 import com.moekosu.dubbo.provider.service.BlogService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -17,21 +18,24 @@ import java.util.Map;
  * @author chenxu
  * @date 2018/03
  */
+//@CrossOrigin(origins = "**", maxAge = 3600)
+@RequestMapping(value = "/blog", method = RequestMethod.POST)
 @RestController
 public class BlogController extends PageController {
 
     @Autowired
     private BlogService blogService;
 
-    @RequestMapping("/blog/list")
+    @RequestMapping("/list")
     @ResponseBody
-    public String getBlogList(String groupId)
+    public String getBlogList(@RequestBody Map<String, Object> reqMap)
     {
+        String groupId = (String) reqMap.get("groupId");
         List<Essay> list = blogService.getEssayList(groupId);
         return returnSuccessMap(list);
     }
 
-    @RequestMapping("/blog/groupList")
+    @RequestMapping("/groupList")
     @ResponseBody
     public String getBlogGroupList()
     {
@@ -39,18 +43,24 @@ public class BlogController extends PageController {
         return returnSuccessMap(list);
     }
 
-    @RequestMapping("/blog/detail")
+    @RequestMapping("/detail")
     @ResponseBody
-    public String getBlogDetail(String id)
+    public String getBlogDetail(@RequestBody Map<String, Object> reqMap)
     {
+        String id = reqMap.get("id").toString();
         Essay essay = blogService.getEssayDetailById(id);
         return returnSuccessMap(essay);
     }
 
-    @RequestMapping("/blog/add")
+    @RequestMapping(value = "/add",method = RequestMethod.POST)
     @ResponseBody
-    public String addEssay(String title, String content, String groupId)
+    public String addEssay(@RequestBody Map<String, Object> reqMap)
     {
+        String title = (String) reqMap.get("title");
+        String content = (String) reqMap.get("content");
+        String groupId = (String) reqMap.get("groupId");
+        // TODO 防止注入
+
         Essay essay = new Essay();
         essay.setTitle(title);
         essay.setContent(content);
@@ -65,10 +75,11 @@ public class BlogController extends PageController {
         }
     }
 
-    @RequestMapping("/blog/remove")
+    @RequestMapping("/remove")
     @ResponseBody
-    public String removeEssay(String essayId)
+    public String removeEssay(@RequestBody Map<String, Object> reqMap)
     {
+        String essayId = reqMap.get("essayId").toString();
         try {
             blogService.removeEssay(essayId);
             return returnSuccessMap(null);
@@ -79,10 +90,15 @@ public class BlogController extends PageController {
         }
     }
 
-    @RequestMapping("/blog/update")
+    @RequestMapping("/update")
     @ResponseBody
-    public String updateEssay(String id, String title, String content, String groupId)
+    public String updateEssay(@RequestBody Map<String, Object> reqMap)
     {
+        String id = reqMap.get("id").toString();
+        String title = reqMap.get("title").toString();
+        String content = reqMap.get("content").toString();
+        String groupId = reqMap.get("groupId").toString();
+
         try {
             Essay essay = new Essay();
             essay.setId(id);
