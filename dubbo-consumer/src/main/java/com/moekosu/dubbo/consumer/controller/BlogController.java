@@ -1,16 +1,11 @@
 package com.moekosu.dubbo.consumer.controller;
 
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONArray;
 import com.moekosu.dubbo.api.bean.Essay;
 import com.moekosu.dubbo.api.bean.EssayGroup;
 import com.moekosu.dubbo.provider.service.BlogService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpServletRequest;
-import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
