@@ -1,8 +1,10 @@
 package com.moekosu.dubbo.consumer.controller;
 
+import com.google.common.base.Optional;
 import com.moekosu.dubbo.api.bean.Essay;
 import com.moekosu.dubbo.api.bean.EssayGroup;
 import com.moekosu.dubbo.provider.service.BlogService;
+import org.joda.time.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -27,6 +29,9 @@ public class BlogController extends PageController {
     {
         String groupId = (String) reqMap.get("groupId");
         List<Essay> list = blogService.getEssayList(groupId);
+        for(Essay e : list){
+            e.setCreateDate(new DateTime(e.getCreateDate()).toDate());
+        }
         return returnSuccessMap(list);
     }
 
@@ -44,7 +49,8 @@ public class BlogController extends PageController {
     {
         String id = reqMap.get("id").toString();
         Essay essay = blogService.getEssayDetailById(id);
-        return returnSuccessMap(essay);
+        Optional<Essay> essay1 = Optional.fromNullable(essay);
+        return returnSuccessMap(essay1.or(new Essay()));
     }
 
     @RequestMapping(value = "/add",method = RequestMethod.POST)
