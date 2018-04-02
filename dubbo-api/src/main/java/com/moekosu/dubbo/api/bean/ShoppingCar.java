@@ -4,36 +4,18 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.List;
 
-public class ShoppingCar implements Serializable{
+/**
+ * 购物车实体类（用户与商品中间多对多关系表）
+ */
+public class ShoppingCar extends Goods implements Serializable{
 
     private static final long serialVersionUID = -6797353054794750373L;
-    // id
-    private String sId;
-
-    // 商品列表
-    private List<Goods> goodsList;
 
     // 用户归属
     private int userId;
 
-    // 总价
-    private BigDecimal priceSum;
-
-    public String getsId() {
-        return sId;
-    }
-
-    public void setsId(String sId) {
-        this.sId = sId;
-    }
-
-    public List<Goods> getGoodsList() {
-        return goodsList;
-    }
-
-    public void setGoodsList(List<Goods> goodsList) {
-        this.goodsList = goodsList;
-    }
+    // 数量
+    private int goodsCount;
 
     public int getUserId() {
         return userId;
@@ -43,11 +25,11 @@ public class ShoppingCar implements Serializable{
         this.userId = userId;
     }
 
-    public BigDecimal getPriceSum() {
-        return priceSum;
+    public int getGoodsCount() {
+        return goodsCount;
     }
 
-    public void setPriceSum(BigDecimal priceSum) {
-        this.priceSum = priceSum;
+    public void setGoodsCount(int goodsCount) {
+        this.goodsCount = goodsCount;
     }
 }

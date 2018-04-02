@@ -24,23 +24,11 @@
 
     </resultMap>
 
-    <insert id="createCar" parameterType="java.lang.String">
-        INSERT INTO
-          shoppingcar(userId, priceSum)
-        VALUES (
-          #{userId}, 0
-        )
-        <!-- 定义返回主键
-        <selectKey keyProperty="id" resultType="java.lang.Long" order="AFTER">
-            SELECT LAST_INSERT_ID()
-        </selectKey>-->
-    </insert>
-
     <insert id="add2Car" parameterType="java.lang.String">
         INSERT INTO
-          car_goods cg(car_id, goods_id, buyCount)
+          shoppingCar cg(user_id, goods_id, buyCount)
         VALUES (
-          #{carId},
+          #{userId},
           #{goodsId},
           #{buyCount}
         )
@@ -48,10 +36,11 @@
 
     <select id="getCarDetails" parameterType="java.lang.String" resultMap="Car">
         SELECT
-          car.id, car.user_id, car.price_sum
+          car.user_id as userId,
+          car.goods_id as gId,
+          car.buyCount as goodsCount
         FROM
           shoppingCar car
-        LEFT JOIN car_goods cg ON car.id = cg.car_id
         LEFT JOIN goods gd ON cg.goods_id = gd.id
         <where>
           <if test="userId != null and userId != ''">
@@ -62,9 +51,9 @@
 
     <delete id="remove4Car" parameterType="java.lang.String">
         DELETE FROM
-          car_goods cg
+          shoppingCar cg
         WHERE
-          cg.car_id = #{carId}
+          cg.user_id = #{userId}
           <if test="goodsId != null and goodsId != ''">
               and cg.goods_id = #{goodsId}
           </if>

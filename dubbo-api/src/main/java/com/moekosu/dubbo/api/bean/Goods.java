@@ -22,9 +22,6 @@ public class Goods implements Serializable {
     // 描述
     private String goodsDesc;
 
-    // 购买数量(给购物车用，这里懒得用继承解耦)
-    private String goodsNum;
-
     public String getgId() {
         return gId;
     }
@@ -65,11 +62,4 @@ public class Goods implements Serializable {
         this.goodsDesc = goodsDesc;
     }
 
-    public String getGoodsNum() {
-        return goodsNum;
-    }
-
-    public void setGoodsNum(String goodsNum) {
-        this.goodsNum = goodsNum;
-    }
 }
