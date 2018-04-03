@@ -23,6 +23,9 @@
     <resultMap id="Car" type="com.moekosu.dubbo.api.bean.ShoppingCar">
 
     </resultMap>
+    <resultMap id="Goods" type="com.moekosu.dubbo.api.bean.Goods">
+
+    </resultMap>
 
     <insert id="add2Car" parameterType="java.lang.String">
         INSERT INTO
@@ -58,5 +61,16 @@
               and cg.goods_id = #{goodsId}
           </if>
     </delete>
+
+    <select id="getGoodsList" resultMap="Goods">
+        SELECT
+          g.id as gId,
+          g.name as goodsName,
+          g.pic_path as goodsPic,
+          g.description as goodsDesc,
+          g.prize as prize
+        FROM
+          goods g
+    </select>
 
 </mapper>

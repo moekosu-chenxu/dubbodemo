@@ -10,17 +10,20 @@ public class Goods implements Serializable {
     // 商品id
     private String gId;
 
+    // 商品图片展示
+    private String goodsPic;
+
     // 商品名称
     private String goodsName;
-
-    // 类型
-    private String goodsType;
 
     // 规格 TODO
     private List<GoodsSpec> goodsSpecList;
 
     // 描述
     private String goodsDesc;
+
+    // 价格
+    private String prize;
 
     public String getgId() {
         return gId;
@@ -30,20 +33,20 @@ public class Goods implements Serializable {
         this.gId = gId;
     }
 
+    public String getGoodsPic() {
+        return goodsPic;
+    }
+
+    public void setGoodsPic(String goodsPic) {
+        this.goodsPic = goodsPic;
+    }
+
     public String getGoodsName() {
         return goodsName;
     }
 
     public void setGoodsName(String goodsName) {
         this.goodsName = goodsName;
-    }
-
-    public String getGoodsType() {
-        return goodsType;
-    }
-
-    public void setGoodsType(String goodsType) {
-        this.goodsType = goodsType;
     }
 
     public List<GoodsSpec> getGoodsSpecList() {
@@ -62,4 +65,11 @@ public class Goods implements Serializable {
         this.goodsDesc = goodsDesc;
     }
 
+    public String getPrize() {
+        return prize;
+    }
+
+    public void setPrize(String prize) {
+        this.prize = prize;
+    }
 }

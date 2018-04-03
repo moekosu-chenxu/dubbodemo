@@ -1,5 +1,6 @@
 package com.moekosu.dubbo.provider.service;
 
+import com.moekosu.dubbo.api.bean.Goods;
 import com.moekosu.dubbo.api.bean.ShoppingCar;
 
 import java.util.List;
@@ -23,13 +24,19 @@ public interface CarService {
      * @param carId 用户id
      * @return
      */
-    ShoppingCar getCarDetail(String carId);
+    ShoppingCar getCarDetail(String userId);
 
     /**
      * 删除购物车内商品
-     * @param carId 用户id
+     * @param userId 用户id
      * @param goodId 商品id，如果为空则清空购物车
      */
-    void remove4Car(String carId, String goodId);
+    void remove4Car(String userId, String goodId);
+
+    /**
+     * 获取全部商品列表
+     * @return
+     */
+    List<Goods> getGoodsList();
 
 }

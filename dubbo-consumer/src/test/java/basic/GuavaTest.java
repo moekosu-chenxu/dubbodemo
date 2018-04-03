@@ -42,7 +42,6 @@ public class GuavaTest {
         Goods goods = new Goods();
         goods.setgId("1");
         goods.setGoodsName("names");
-        goods.setGoodsNum("2");
         goods.setGoodsDesc("desc");
 
         // 空内容
