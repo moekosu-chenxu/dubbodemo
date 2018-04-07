@@ -21,10 +21,10 @@ public interface CarService {
 
     /**
      * 获取购物车列表
-     * @param carId 用户id
+     * @param userId 用户id
      * @return
      */
-    ShoppingCar getCarDetail(String userId);
+    List<ShoppingCar> getCarDetail(String userId);
 
     /**
      * 删除购物车内商品

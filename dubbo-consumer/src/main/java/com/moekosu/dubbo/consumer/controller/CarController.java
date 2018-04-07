@@ -45,7 +45,7 @@ public class CarController extends PageController {
     public String getCarList(@RequestBody Map<String, Object> reqMap)
     {
         String userId = (String) reqMap.get("userId");
-        ShoppingCar car;
+        List<ShoppingCar> car;
         try {
             car = carService.getCarDetail(userId);
         }

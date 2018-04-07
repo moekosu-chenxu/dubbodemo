@@ -59,9 +59,9 @@ public class CarServiceImpl implements CarService {
      * @param userId
      * @return
      */
-    public ShoppingCar getCarDetail(String userId)
+    public List<ShoppingCar> getCarDetail(String userId)
     {
-        ShoppingCar car = new ShoppingCar();
+        List<ShoppingCar> car = new ArrayList<ShoppingCar>();
         try{
             car = carMapper.getCarDetails(userId);
         }
