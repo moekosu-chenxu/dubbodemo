@@ -8,7 +8,7 @@ public class Goods implements Serializable {
     private static final long serialVersionUID = 4437309283256131482L;
 
     // 商品id
-    private String gId;
+    private String goodsId;
 
     // 商品图片展示
     private String goodsPic;
@@ -23,14 +23,14 @@ public class Goods implements Serializable {
     private String goodsDesc;
 
     // 价格
-    private String prize;
+    private String price;
 
-    public String getgId() {
-        return gId;
+    public String getGoodsId() {
+        return goodsId;
     }
 
-    public void setgId(String gId) {
-        this.gId = gId;
+    public void setGoodsId(String goodsId) {
+        this.goodsId = goodsId;
     }
 
     public String getGoodsPic() {
@@ -65,11 +65,11 @@ public class Goods implements Serializable {
         this.goodsDesc = goodsDesc;
     }
 
-    public String getPrize() {
-        return prize;
+    public String getPrice() {
+        return price;
     }
 
-    public void setPrize(String prize) {
-        this.prize = prize;
+    public void setPrice(String price) {
+        this.price = price;
     }
 }

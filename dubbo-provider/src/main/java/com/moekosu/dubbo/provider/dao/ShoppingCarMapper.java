@@ -19,7 +19,7 @@ public interface ShoppingCarMapper {
     void add2Car(@Param("userId") String userId, @Param("goodsId") String goodsId, @Param("buyCount") String buyCount) throws Exception;
 
     // 获取购物车列表
-    ShoppingCar getCarDetails(String userId) throws Exception;
+    ShoppingCar getCarDetails(@Param("userId") String userId) throws Exception;
 
     // 删除购物车内的商品(不传商品id则删除全部购物车)
     void remove4Car(@Param("userId") String userId, @Param("goodsId") String goodsId) throws Exception;

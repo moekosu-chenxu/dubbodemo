@@ -40,7 +40,7 @@ public class GuavaTest {
     private Optional getOptional()
     {
         Goods goods = new Goods();
-        goods.setgId("1");
+        goods.setGoodsId("1");
         goods.setGoodsName("names");
         goods.setGoodsDesc("desc");
 

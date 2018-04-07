@@ -29,7 +29,7 @@
 
     <insert id="add2Car" parameterType="java.lang.String">
         INSERT INTO
-          shoppingCar cg(user_id, goods_id, buyCount)
+          shoppingCar(user_id, goods_id, buyCount)
         VALUES (
           #{userId},
           #{goodsId},
@@ -40,11 +40,11 @@
     <select id="getCarDetails" parameterType="java.lang.String" resultMap="Car">
         SELECT
           car.user_id as userId,
-          car.goods_id as gId,
+          car.goods_id as goodsId,
           car.buyCount as goodsCount
         FROM
           shoppingCar car
-        LEFT JOIN goods gd ON cg.goods_id = gd.id
+        LEFT JOIN goods gd ON car.goods_id = gd.id
         <where>
           <if test="userId != null and userId != ''">
               car.user_id = #{userId}
@@ -54,21 +54,21 @@
 
     <delete id="remove4Car" parameterType="java.lang.String">
         DELETE FROM
-          shoppingCar cg
+          shoppingCar
         WHERE
-          cg.user_id = #{userId}
+          user_id = #{userId}
           <if test="goodsId != null and goodsId != ''">
-              and cg.goods_id = #{goodsId}
+              and goods_id = #{goodsId}
           </if>
     </delete>
 
     <select id="getGoodsList" resultMap="Goods">
         SELECT
-          g.id as gId,
+          g.id as goodsId,
           g.name as goodsName,
           g.pic_path as goodsPic,
           g.description as goodsDesc,
-          g.prize as prize
+          g.price as price
         FROM
           goods g
     </select>
